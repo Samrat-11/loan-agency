@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- =============== CSS =============== -->
+    <!-- <link rel="stylesheet" href="assets/css/styles.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS (Popper included) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* add style here for this page*/
+    </style>
+</head>
+<body>
+
+    <!-- Load Navbar start-->
+    <div id="navbar-placeholder"></div>
+
+    <script>
+    fetch("navbar.html")
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading navbar:", error));
+    </script>
+    
+    <!-- Load Navbar end-->
+    
+    <!--=============== EMI Calculator ===============-->
+    <section class="container section py-5" id="EmiCalculator">
+        <h2 class="section__title">EMI Calculator</h2>
+        <p class="section__subtitle">Calculate your EMI for Home Loan, Car Loan, Personal Loan, etc.</p>
+        <div class="container  mt-1">                    
+            <div class="row g-5">
+                <div class="col-md-4">
+                    <label class="form-label">Loan Amount</label>
+                    <input type="number" id="loanAmount" class="form-control" placeholder="Enter loan amount" oninput="autoCalculate()">
+        
+                    <label class="form-label mt-3">Annual Interest Rate (%)</label>
+                    <input type="number" id="interestRate" class="form-control" placeholder="Enter interest rate" oninput="autoCalculate()">
+        
+                    <label class="form-label mt-3">Loan Term (Months)</label>
+                    <input type="number" id="loanTerm" class="form-control" placeholder="Enter loan term" oninput="autoCalculate()">
+        
+                    <button class="btn btn-primary mt-3" onclick="calculateEMI()">Calculate</button>
+                    <button class="btn btn-secondary mt-3 ms-2" onclick="clearFields()">Clear Fields</button>
+                </div>
+                <div class="col-md-4">
+                    <p><strong>EMI (Per month):</strong> <span id="emiAmount">0</span></p>
+                    <p><strong>Total Principal:</strong> <span id="totalPrincipal">0</span></p>
+                    <p><strong>Total Interest:</strong> <span id="totalInterest">0</span></p>
+                    <p><strong>Total Amount:</strong> <span id="totalAmount">0</span></p>
+                </div>
+                <div class="col-md-4">
+                    <canvas id="emiChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function calculateEMI() {
+            let loanAmount = parseFloat(document.getElementById("loanAmount").value);
+            let annualRate = parseFloat(document.getElementById("interestRate").value);
+            let loanTerm = parseInt(document.getElementById("loanTerm").value);
+
+            if (isNaN(loanAmount) || isNaN(annualRate) || isNaN(loanTerm) || loanAmount <= 0 || annualRate < 0 || loanTerm <= 0) {
+                alert("Please enter valid positive values.");
+                return;
+            }
+
+            let monthlyRate = annualRate / 12 / 100;
+            let emi = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, loanTerm)) / 
+                      (Math.pow(1 + monthlyRate, loanTerm) - 1);
+            let totalPayment = emi * loanTerm;
+            let totalInterest = totalPayment - loanAmount;
+
+            document.getElementById("emiAmount").innerText = emi.toFixed(2);
+            document.getElementById("totalPrincipal").innerText = loanAmount.toLocaleString();
+            document.getElementById("totalInterest").innerText = totalInterest.toFixed(2);
+            document.getElementById("totalAmount").innerText = totalPayment.toFixed(2);
+
+            updateChart(loanAmount, totalInterest);
+        }
+
+        function autoCalculate() {
+            let loanAmount = document.getElementById("loanAmount").value;
+            let interestRate = document.getElementById("interestRate").value;
+            let loanTerm = document.getElementById("loanTerm").value;
+
+            if (loanAmount && interestRate && loanTerm) {
+                calculateEMI();
+            }
+        }
+
+        function clearFields() {
+            document.getElementById("loanAmount").value = "";
+            document.getElementById("interestRate").value = "";
+            document.getElementById("loanTerm").value = "";
+            document.getElementById("emiAmount").innerText = "0";
+            document.getElementById("totalPrincipal").innerText = "0";
+            document.getElementById("totalInterest").innerText = "0";
+            document.getElementById("totalAmount").innerText = "0";
+            if (emiChart) emiChart.destroy();
+        }
+
+        let emiChart;
+        function updateChart(principal, interest) {
+            let ctx = document.getElementById('emiChart').getContext('2d');
+            if (emiChart) emiChart.destroy();
+            emiChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ["Principal", "Total Interest"],
+                    datasets: [{
+                        data: [principal, interest],
+                        backgroundColor: ["#007bff", "#ff6384"]
+                    }]
+                }
+            });
+        }
+
+        // Clear fields when the page loads
+        window.onload = function () {
+            clearFields();
+        };
+
+    </script>
+    <!-- Load Footer start-->
+    <div id="footer-placeholder"></div>
+
+    <script>
+      fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading footer:", error));
+    </script>
+    <!-- Load Footer end-->  
+</body>
+</html>

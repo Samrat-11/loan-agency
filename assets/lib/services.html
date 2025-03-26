@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- =============== CSS =============== -->
+   
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS (Popper included) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* add style here for this page*/
+        
+        .loan-types, .documents {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .loan-card, .doc-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .loan-card h3 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .loan-card h3 img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .loan-card table, .doc-card table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .loan-card th, .loan-card td, .doc-card th, .doc-card td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .loan-card th, .doc-card th {
+            background-color: #2c3e50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Load Navbar start-->
+    <div id="navbar-placeholder"></div>
+
+    <script>
+    fetch("navbar.html")
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading navbar:", error));
+    </script>
+    
+    <!-- Load Navbar end-->
+    
+    <!--=============== our services ===============-->
+    <section class="container section py-5" id="services">
+        <h2 class="section__title">Our Services</h2>
+        <p class="section__subtitle"></p>
+        <!-- Loan Types -->
+        <div class="loan-types">
+            <!-- Personal Loan -->
+            <div class="loan-card">
+                <h3>
+                    <!-- <img src="https://via.placeholder.com/50x50?text=Personal+Loan+Icon" alt="Personal Loan Icon"> -->
+                    Personal Loan
+                </h3>
+                <p>General loan details for up to 40 lakh at attractive rates starting at 8.0% p.a with flexible tenures up to 7 years.</p>
+                <table>
+                    <tr>
+                        <th>Criteria</th>
+                        <th>Salaried</th>
+                        <th>Business & Self-Employed</th>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td>21 years to 60 years</td>
+                        <td>25 years to 65 years</td>
+                    </tr>
+                    <tr>
+                        <td>Net Monthly Income</td>
+                        <td>Rs. 15,000</td>
+                        <td>Rs. 25,000</td>
+                    </tr>
+                    <tr>
+                        <td>CIBIL Score</td>
+                        <td>Above 750</td>
+                        <td>Above 750</td>
+                    </tr>
+                    <tr>
+                        <td>Minimum Loan Amount</td>
+                        <td>Rs. 50,000</td>
+                        <td>Rs. 75,000</td>
+                    </tr>
+                    <tr>
+                        <td>Maximum Loan Amount</td>
+                        <td>Rs. 40 lakh</td>
+                        <td>Rs. 40 lakh</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Car Loan -->
+            <div class="loan-card">
+                <h3>
+                    <!-- <img src="https://via.placeholder.com/50x50?text=Car+Loan+Icon" alt="Car Loan Icon"> -->
+                    Car Loan
+                </h3>
+                <p>Car loan with interest rates as low as 7.30% p.a and repayment tenure of up to 8 years.</p>
+                <table>
+                    <tr>
+                        <th>Steps</th>
+                        <th>Requirements</th>
+                        <th>Inference</th>
+                    </tr>
+                    <tr>
+                        <td>Apply for Car Loan</td>
+                        <td>Compare offers available</td>
+                        <td>Find the loan that offers the highest loan amount and the most affordable interest rate.</td>
+                    </tr>
+                    <tr>
+                        <td>Submit Income Proof</td>
+                        <td>Bank Statement (last 6 months), Pay Slips (last 3 months)</td>
+                        <td>Lender wants to establish your ability to repay the borrowed amount.</td>
+                    </tr>
+                    <tr>
+                        <td>Submit Proof of Identity and Address</td>
+                        <td>PAN Card, Voter’s ID, Aadhar Card, Passport, etc.</td>
+                        <td>Lender wants to establish your nationality, identity, and permanent address.</td>
+                    </tr>
+                    <tr>
+                        <td>Credit History</td>
+                        <td>PAN Card</td>
+                        <td>Lender wants to check your past credit records to establish if you can be trusted to make regular payments.</td>
+                    </tr>
+                    <tr>
+                        <td>Information about Vehicle</td>
+                        <td>Sales Receipts from the showroom from where the vehicle was purchased</td>
+                        <td>Lender must confirm that the deal was affected as intended.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Gold Loan -->
+            <div class="loan-card">
+                <h3>
+                    <!-- <img src="https://via.placeholder.com/50x50?text=Gold+Loan+Icon" alt="Gold Loan Icon"> -->
+                    Gold Loan
+                </h3>
+                <p>Secure a loan against your gold with competitive rates starting at 1% per month.</p>
+                <table>
+                    <tr>
+                        <th>Parameters</th>
+                        <th>Gold Price (24 Karat)</th>
+                    </tr>
+                    <tr>
+                        <td>September 1st Rate</td>
+                        <td>Rs. 5,287 per gram</td>
+                    </tr>
+                    <tr>
+                        <td>September 13 Rate</td>
+                        <td>Rs. 5,439 per gram</td>
+                    </tr>
+                    <tr>
+                        <td>Highest Rate in September</td>
+                        <td>Rs. 5,483 on 11 September</td>
+                    </tr>
+                    <tr>
+                        <td>Lowest Rate in September</td>
+                        <td>Rs. 5,287 on 1 September</td>
+                    </tr>
+                    <tr>
+                        <td>Overall Performance</td>
+                        <td>Incline</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Credit Card -->
+            <div class="loan-card">
+                <h3>
+                    <!-- <img src="https://via.placeholder.com/50x50?text=Credit+Card+Icon" alt="Credit Card Icon"> -->
+                    Credit Card
+                </h3>
+                <p>Apply for a credit card with exclusive benefits and rewards.</p>
+                <table>
+                    <tr>
+                        <th>Eligibility Criteria</th>
+                        <th>Requirements</th>
+                    </tr>
+                    <tr>
+                        <td>Nationality</td>
+                        <td>You should be a citizen of India or a non-resident Indian (some banks extend credit cards to NRIs).</td>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td>You should be at least 18 years old. In some cases, the minimum age to apply for a credit card is 21 years.</td>
+                    </tr>
+                    <tr>
+                        <td>Employment Status</td>
+                        <td>You must either be salaried or self-employed and have a steady source of income.</td>
+                    </tr>
+                    <tr>
+                        <td>Income</td>
+                        <td>Most banks will require you to meet their minimum income requirement before they approve your card application.</td>
+                    </tr>
+                    <tr>
+                        <td>Credit Score</td>
+                        <td>A good CIBIL Score with no history of default goes a long way in making sure that your credit card application is approved.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Life Insurance -->
+            <div class="loan-card">
+                <h3>
+                    <!-- <img src="https://via.placeholder.com/50x50?text=Life+Insurance+Icon" alt="Life Insurance Icon"> -->
+                    Life Insurance
+                </h3>
+                <p>Secure your family’s future with our life insurance plans.</p>
+                <table>
+                    <tr>
+                        <th>Life Plans</th>
+                        <th>Coverage</th>
+                    </tr>
+                    <tr>
+                        <td>ULIPs</td>
+                        <td>Pure risk cover + Investment Benefits</td>
+                    </tr>
+                    <tr>
+                        <td>Endowment Plans</td>
+                        <td>Insurance + Investment Benefits</td>
+                    </tr>
+                    <tr>
+                        <td>Child Plans</td>
+                        <td>Corpus for child’s education, wedding, etc.</td>
+                    </tr>
+                    <tr>
+                        <td>Retirement Plans</td>
+                        <td>Financial cushion aiding financial independence post-retirement</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Health Insurance -->
+            <div class="loan-card">
+                <h3>
+                    <!-- <img src="https://via.placeholder.com/50x50?text=Health+Insurance+Icon" alt="Health Insurance Icon"> -->
+                    Health Insurance
+                </h3>
+                <p>Protect yourself with comprehensive health insurance plans.</p>
+                <table>
+                    <tr>
+                        <th>Your Requirement</th>
+                        <th>What You Should Get</th>
+                    </tr>
+                    <tr>
+                        <td>A fixed daily while you are hospitalized</td>
+                        <td>Hospital Cash Plan</td>
+                    </tr>
+                    <tr>
+                        <td>Diagnosed/hospitalized with a critical illness or the loss of income</td>
+                        <td>Critical Illness Plan</td>
+                    </tr>
+                    <tr>
+                        <td>An accidental disability leading to loss of income</td>
+                        <td>Personal Accident Insurance</td>
+                    </tr>
+                    <tr>
+                        <td>Cover for senior citizens</td>
+                        <td>Senior Citizen Health Insurance</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Required Documents -->
+        <div class="documents">
+            <h3>Documents Required</h3>
+            <div class="doc-card">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Salaried Individuals</th>
+                        <th>Self-Employed</th>
+                    </tr>
+                    <tr>
+                        <td>Proof of Identity</td>
+                        <td>Passport, PAN Card, Voter’s ID, Driving License</td>
+                        <td>Passport, PAN Card</td>
+                    </tr>
+                    <tr>
+                        <td>Proof of Residence</td>
+                        <td>Passport, Aadhar Card, Voter’s ID, Driving License</td>
+                        <td>Passport or utility bills</td>
+                    </tr>
+                    <tr>
+                        <td>Proof of Income</td>
+                        <td>Three months Bank Statement, Three months Pay Slips</td>
+                        <td>Audited financial statement of the past two years</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <script>
+        
+    </script>
+    <!-- Load Footer start-->
+    <div id="footer-placeholder"></div>
+
+    <script>
+      fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading footer:", error));
+    </script>
+    <!-- Load Footer end-->  
+</body>
+</html>

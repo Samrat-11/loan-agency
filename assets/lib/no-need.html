@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for a loan </title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS (Popper included) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /*=============== check loan eligibily form start ===============*/
+.container-loan {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+    
+}
+.form-section {
+  width: 50%;
+  padding: 20px;
+  /* border: 1px solid #ddd;
+  background: #fff; */
+}
+.result-section {
+  width: 50%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  display: none; /* Initially hidden */
+  flex: 1;
+}
+
+.form-section, .result-section {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+button {
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.result-section h2 {
+  margin-top: 0;
+}
+
+.result-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.result-section button {
+  margin-top: 15px;
+  padding: 10px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.result-section button:hover {
+  background: #218838;
+}
+
+
+.job-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0px; /* Reduces the vertical spacing */
+}
+
+.job-options label {
+  display: flex;
+  align-items: center;
+  gap: 0px; /* Small gap between radio button and text */
+  white-space: nowrap; /* Prevents text from breaking into multiple lines */
+}
+
+.job-options input {
+  margin-right: 0px; /* Adds a small space between the radio button and label text */
+}
+#eligibilityResults {
+  display: none; /* Hidden initially */
+  float: right; /* Align to the right */
+  width: 40%; /* Adjust width */
+}
+
+@media (max-width: 768px) {
+  .container-loan {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-section, 
+  .result-section, #eligibilityResults {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+}
+#ageDisplay {
+  font-weight: bold;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            min-width: 60px; /* Ensures box doesn't shrink too much */
+            width: 20%;
+            }
+/*=============== check loan eligibily form end ===============*/
+</style>
+</head>
+
+<body>
+    <!-- Load Navbar start-->
+    <div id="navbar-placeholder"></div>
+
+    <script>
+    fetch("navbar.html")
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading navbar:", error));
+    </script>
+    <!-- Load Navbar end-->
+
+    <section class="elementor-section py-5">
+        <div class="elementor-container">
+            <div class="elementor-column elementor-col-100">
+                <h2 class="text-center">Apply For a Loan</h2>
+            </div>
+        </div>
+
+        <div class="container-loan" >
+            <div class="form-section">
+                <h2>Loan Application</h2>
+                <form id="loanForm">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" required>
+
+                    <label for="age">Date oF Birth:</label>
+                    <input type="date" id="age" required>
+                    <span id="ageDisplay">Age:</span>
+
+                    <label>Mobile No: <input type="tel" name="mobile" id="phoneNumber" required pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number"></label>
+
+                    <label>Email: 
+                        <input type="email" name="email" required
+                               placeholder="example@gmail.com" 
+                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                               title="Enter a valid email (e.g., user@example.com)">
+                    </label>
+                    <label>Select your job:
+                        <select name="Select_your_job" required>
+                            <option value="">Select your job</option>
+                            <option value="Salaried">Salaried</option>
+                            <option value="Self-Employed">Business/Self-Employed</option>
+                        </select>
+                    </label>
+
+                    <label for="company">Company Name:</label>
+                    <input type="text" id="comapny" required>
+
+                    <label>Type of Loan:
+                        <select name="loan_type" required>
+                            <option value="">-Type of Loan-</option>
+                            <option value="Personal Loan">Personal Loan</option>
+                            <option value="Business Loan">Business Loan</option>
+                            <option value="Housing Loan">Housing Loan</option>
+                            <option value="Mortgage Loan">Mortgage Loan</option>
+                            <option value="Auto Loan">Auto Loan</option>
+                        </select>
+                    </label>
+    
+                    <label for="income">Annual Income (₹):</label>
+                    <input type="number" id="income" required>
+    
+                    <label for="creditScore">Credit Score (300-850):</label>
+                    <input type="number" id="creditScore" min="300" max="850" required>
+
+                    <label for="address">Address Line:</label>
+                    <input type="text" id="address" required>
+
+                    <label for="city">City:</label>
+                    <input type="text" id="city" required>
+
+                    <label for="state">State:</label>
+                    <input type="text" id="state" required>
+
+                    <label for="Zipcode">Zip Code:</label>
+                    <input type="number" id="code" required>
+
+                    <label for="Country">Country:</label>
+                    <input type="text" id="country" required>
+    
+                    <label for="loanAmount">Loan Amount (₹):</label>
+                    <input type="number" id="loanvalue" required>
+    
+                    <button type="button" id="checkEligibility">Check Eligibility</button>
+                </form>
+            </div>
+    
+            <div class="result-section" id="eligibilityResults">
+                <h2>Eligibility Results</h2>
+                <p id="eligibleCount"></p>
+                <ul id="bankList"></ul>
+                <button id="applyLoan" style="display: none;">Apply Loan</button>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.getElementById('checkEligibility').addEventListener('click', checkEligibility);
+document.getElementById('applyLoan').addEventListener('click', applyLoan);
+
+const banks = [
+    { name: "Fibe", minIncome: 300000, minCreditScore: 0, maxLoan: 500000 },
+    { name: "Bank B", minIncome: 25000, minCreditScore: 650, maxLoan: 30000 },
+    { name: "Bank C", minIncome: 40000, minCreditScore: 720, maxLoan: 100000 }
+];
+
+function checkEligibility() {
+    // Get form values
+    const name = document.getElementById('name').value;
+    const income = parseInt(document.getElementById('income').value);
+    const creditScore = parseInt(document.getElementById('creditScore').value);
+    const loanvalue = parseInt(document.getElementById('loanvalue').value);
+
+    // Check eligibility
+    const eligibleBanks = banks.filter(bank => 
+        income >= bank.minIncome && 
+        creditScore >= bank.minCreditScore && 
+        loanvalue <= bank.maxLoan
+    );
+
+    // Display results
+    document.getElementById('eligibleCount').textContent = `Eligible Banks: ${eligibleBanks.length}`;
+    
+    const bankList = document.getElementById('bankList');
+    bankList.innerHTML = ''; // Clear previous results
+    eligibleBanks.forEach(bank => {
+        const li = document.createElement('li');
+        li.textContent = bank.name;
+        bankList.appendChild(li);
+    });
+
+    // Show apply button if eligible
+    document.getElementById('applyLoan').style.display = eligibleBanks.length > 0 ? 'block' : 'none';
+
+    // Store data for WhatsApp (if needed)
+    window.userData = { name, income, creditScore, loanvalue, eligibleBanks };
+
+    // Make the eligibility results section visible
+    document.getElementById('eligibilityResults').style.display = "block";
+}
+
+
+function applyLoan() {
+    const { name, income, creditScore, loanvalue, eligibleBanks } = window.userData;
+    const bankNames = eligibleBanks.map(bank => bank.name).join(', ');
+    const message = `Loan Application:\nName: ${name}\nIncome: $${income}\nCredit Score: ${creditScore}\nLoan Amount: $${loanvalue}\nEligible Banks: ${bankNames}`;
+
+    // WhatsApp URL (replace with admin's number)
+    const adminNumber = "8247634398"; // Replace with actual number in international format (e.g., +919876543210)
+    const whatsappUrl = `https://wa.me/${adminNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Open WhatsApp
+    window.open(whatsappUrl, '_blank');
+}
+//Check Your Eligibility end
+
+    </script>
+    <!-- Load Footer start-->
+    <div id="footer-placeholder"></div>
+
+    <script>
+      fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading footer:", error));
+    </script>
+    <script>
+     const dobInput = document.getElementById('age');
+        const ageDisplay = document.getElementById('ageDisplay');
+
+        function calculateAge(dob) {
+            const today = new Date();
+            const birthDate = new Date(dob);
+            
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            
+            // Adjust age if birthday hasn't occurred this year
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            
+            return age;
+        }
+
+        dobInput.addEventListener('change', function() {
+            const dob = this.value;
+            if (dob) {
+                const age = calculateAge(dob);
+                ageDisplay.textContent = `Age: ${age}`;
+            } else {
+                ageDisplay.textContent = 'Age: ';
+            }
+        });
+    </script>
+    <!-- Load Footer end-->  
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    
+        <!-- Bootstrap JS (Popper included) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>Loan Agency</title>
+    </head>
+    <body>
+        <!--=============== HEADER ===============-->
+        <!-- Load Navbar start -->
+    <div id="navbar-placeholder"></div>
+
+    <script>
+    fetch("./assets/lib/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading navbar:", error));
+    </script>
+        <!-- Load Navbar end-->
+
+        <main>
+
+            <!--=============== HOME ===============-->
+             <section class="container py-5" id="home">
+                <h4 class="text-center mb-4">Finance Made Simple, Dreams Made Possible!</h4>
+                <div class="row align-items-center">
+                    <!-- Left Text Section -->
+                    <div class="col-md-6 text-section">
+                        <p>At Lenderbazar, we offer financial solutions tailored to your needs. Whether you are looking for a loan, banking services, or insurance, we have you covered.</p>
+                        <p>Your Trusted Partner for Loans, Banking, and Financial Services!</p>
+                    </div>
+                    
+                    <!-- Right Carousel Section -->
+                    <div class="col-md-6">
+                        <div class="carousel-container">
+                            <div class="carousel">
+                                <div class="slide"><img src="assets/img/loan1.jpg" alt="Slide 1"></div>
+                                <div class="slide"><img src="assets/img/loan2.jpg" alt="Slide 2"></div>
+                                <div class="slide"><img src="assets/img/loan3.jpg" alt="Slide 3"></div>
+                                <div class="slide"><img src="assets/img/loan4.jpg" alt="Slide 1"></div>
+                                <div class="slide"><img src="assets/img/loan1.jpg" alt="Slide 1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="apply-button col-md-3 flex-row justify-content-center">
+                        <a href="/loan-agency/assets/lib/applyloan.html" class="text-white">Apply Now</a>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path
+                            fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </button> 
+                </div>
+            </section>
+             
+            <div class="logo-slider d-flex flex-column justify-content-center">
+                <div class="logo-track">
+                    <img src="assets/img/1200px-Axis_Bank_logo.png">
+                    <img src="assets/img/Edelweiss.png">
+                    <img src="assets/img/hbd2.png">
+                    <img src="assets/img/hdfc-bank.png">
+                    <img src="assets\img\ICICI-Bank-PNG-Logo.png">
+                    <img src="assets/img/home-loan.jpg">
+                    <img src="assets/img/icici-lombard.jpg">
+                    <img src="assets/img/indusbank.png">
+                    <img src="assets/img/muthoot.jpg">
+                    <img src="assets/img/personal.jpg">
+                    <img src="assets/img/repco2.png">
+                    <img src="assets/img/starhealth.jpg">
+                    <img src="assets/img/state_bank_of_india_logo_before_after.png">
+                    <img src="assets/img/yes-bank.png">
+                </div>
+            </div>
+
+            <!--=============== ABOUT ===============-->
+            
+            <section id="about">
+            <div class="container text-center py-5">
+                <h2>About</h2>
+                <div class="row align-items-center mt-3">
+    
+                    <div class="col-md-6 text-start"><img src="assets/img/about.jpg" height="250" width="500"></div>
+                    <div class="col-md-6 text-start">
+                        <h1>Welcomme To The <br>
+                        LenderBazar..</h1>
+                        <p>LenderBazar loans' mission is to expand access to credit and lower the cost of borrowing for the millions of people that traditional banks are typically unable to serve. Everything we do is for people.</p>
+                    </div>
+                </div>
+                <button class="apply-button col-md-3 flex-row justify-content-center btn btn-dark">
+                    <a href="/loan-agency/assets/lib/services.html" class="text-white">Learn More</a>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        fill-rule="evenodd"
+                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </button> 
+            </div>
+            </section>
+    
+
+            <!--=============== Services ===============-->
+            <section class="container py-5" id="services">
+                <h2 class="services__title text-center">Our Services</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <img src="assets/img/th.jpeg" href="/loan-agency/assets/lib/services.html" alt="Home Loan">
+                        <div class="card__content">
+                            <p class="card__title">Home Loan</p>
+                            <p class="card__description">Own your dream home with easy financing and low-interest rates.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/img/car loan.jpeg" alt="Car Loan">
+                        <div class="card__content">
+                            <p class="card__title">Car Loan</p>
+                            <p class="card__description">Drive home your dream car with quick approvals and attractive interest rates.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/img/personal loan.jpeg" alt="Personal Loan">
+                        <div class="card__content">
+                            <p class="card__title">Personal Loan</p>
+                            <p class="card__description">Get instant funds for any personal need with minimal documentation.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/img/credit card.jpeg" alt="Credit Card">
+                        <div class="card__content">
+                            <p class="card__title">Credit Card</p>
+                            <p class="card__description">Enjoy seamless transactions with exclusive rewards and cashback.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/img/gold loan.jpeg" alt="Gold Loan">
+                        <div class="card__content">
+                            <p class="card__title">Gold Loan</p>
+                            <p class="card__description">Unlock the value of your gold with a hassle-free loan.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/img/Insurance.jpg" alt="Insurance">
+                        <div class="card__content">
+                            <p class="card__title">Insurance</p>
+                            <p class="card__description">Secure your future with comprehensive insurance plans.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!--=============== CONTACTME ===============-->
+            <section id="contact">
+                <div class="container-fluid contact overflow-hidden py-5">
+                    <h2 class="section__title">Contact US</h2>
+                    <div class="container py-5">
+                        <div class="row g-5 mb-5">
+                            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                                <h5 class="text-primary">Quick Contact</h5>
+                                <h1 class="display-6 mb-4">Have Questions? Don't Hesitate to Contact Us</h1>
+                                <!-- <p class="mb-5"></p> -->
+                                <div class="d-flex border-bottom mb-4 pb-4">
+                                    <a href="https://maps.google.com/maps?q=LENDERBAZAR%20Ramalinga%20Puram%20Nellore%2C%20Andhra%20Pradesh"<i class="fas fa-map-marked-alt fa-3x text-primary bg-light p-3 rounded"></i></a>
+                                    <div class="ps-1 flex-grow-1">
+                                        <h5>Nellore</h5>
+                                        <p class="mb-0">1st Floor, 16-8-257A, Ramalingapuram, Main Road, Beside Mahadev Medical Shop, Nellore-524003, Andhra Pradesh</p>
+                                    </div>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-xl-6">
+                                        <div class="d-flex">
+                                            <i class="fas fa-tty fa-2x text-primary"></i>
+                                            <div class="ps-3">
+                                                <h5 class="mb-3">Quick Contact</h5>
+                                                <div class="mb-3">
+                                                    <h6 class="mb-0">Phone:</h6>
+                                                    <a href="tel:+919052280692" class="fs-5 text-primary">+91 9052280692</a><br>
+                                                    <a href="tel:+918919432702" class="fs-5 text-primary">+91 8919432702</a>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h6 class="mb-0">Email:</h6>
+                                                    <a href="mailto:lenderbazar@gmail.com" class="fs-5 text-primary">lenderbazar@gmail.com</a><br>
+                                                    <a href="mailto:loans@myloanssupport.com" class="fs-5 text-primary">loans@myloanssupport.com</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-xl-6">
+                                        <div class="d-flex">
+                                            <i class="fas fa-clone fa-2x text-primary"></i>
+                                            <div class="ps-3">
+                                                <h5 class="mb-3">Opening Hrs</h5>
+                                                <div class="mb-3">
+                                                    <h6 class="mb-0">Mon - Friday:</h6>
+                                                    <a href="#" class="fs-5 text-primary">09.00 am to 07.00 pm</a>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <h6 class="mb-0">Saturday:</h6>
+                                                    <a href="#" class="fs-5 text-primary">10.00 am to 05.00 pm</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3">
+                                <h5 class="text-primary">Let’s Connect</h5>
+                                <h1 class="display-6 mb-4">Send Your Message</h1>
+                                <form action="/sendEmail" method="POST" enctype="multipart/form-data" class="contact__form" id="contactMeForm">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                                <label for="name">Your Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                                <label for="email">Your Email</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="phone" class="form-control" id="phone" placeholder="Phone">
+                                                <label for="phone">Your Phone</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="project" placeholder="Project">
+                                                <label for="project">Your Project</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                                <label for="subject">Subject</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
+                                                <label for="message">Message</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-primary w-100">Send Message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <!-- Contact End -->
+
+        <!-- Footer Start -->
+
+        <!-- Load Footer start-->
+    <div id="footer-placeholder"></div>
+
+    <script>
+      fetch("./assets/lib/footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading footer:", error));
+    </script>
+        <!-- Load Footer end-->  
+
+        </main>
+        
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
