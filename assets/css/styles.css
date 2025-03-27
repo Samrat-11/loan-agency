@@ -136,17 +136,17 @@ img {
     left: 0;
     right: 0;
     background-color: transparent;
-    backdrop-filter: blur(12.5px);
+    backdrop-filter: blur(20px);
     height: 15%;;
-    width: 88%;
+    width: 80%;
     margin-inline: auto;
     box-shadow: 0 2px 16px hsla(228, 95%, 4%, .1);
-    padding: 1rem 1.75rem;
+    padding: 1rem 1.5rem;
     border-radius: 4rem;
     z-index: var(--z-fixed);
     transition: .4s;
     padding-left: 0px;
-    padding-top: 8px;
+    padding-top: 10px;
     
   }
   .nav__link:hover {
@@ -503,7 +503,7 @@ img {
   overflow: hidden;
   padding: 20px 0;
   height: 100px;
-  width: 1260px;
+  width: 100%;
   /* width: auto; */
 }
 
