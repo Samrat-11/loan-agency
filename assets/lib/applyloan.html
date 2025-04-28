@@ -302,10 +302,14 @@
         document.getElementById('applyLoan').addEventListener('click', applyLoan);
 
         const banks = [
-            { name: "Fibe", minIncome: 300000, minCreditScore: 0, maxLoan: 500000 },
-            { name: "Bank B", minIncome: 25000, minCreditScore: 650, maxLoan: 30000 },
-            { name: "Bank C", minIncome: 40000, minCreditScore: 720, maxLoan: 100000 }
-        ];
+    { name: "Incred Bank", loanType: "Personal Loan", minIncome: 15000, minCreditScore: 650, maxLoan: 1000000, minAge: "21 to 56" },
+    { name: "FIBE POLICY", minIncome: 25000, minCreditScore: 650, maxLoan: 500000, minAge: "19 t0 55" },
+    { name: "IDFC First Bank", loanType: "Personal Loan", minIncome: 20000, minCreditScore: 720, maxLoan: 10000000, minAge: "23 to 25" },
+    { name: "INDUSIND BANK", minIncome: 30000, minCreditScore: 730, maxLoan: 5000000, minAge: "21 to 58"},
+    { name: "YES Bank", minIncome: 25000, minCreditScore: 680, maxLoan: 5000000, minAge: "21 to 58" },
+    { name: "Credit Saison", minIncome: 20000, minCreditScore: 670, maxLoan: 5000000, minAge: "21 to 60"},
+    { name: "InCred Finance", loanType: "Personal Loan", minIncome: 15000, minCreditScore: 650, maxLoan: 5000000, minAge: "21 to 56" },
+];
 
         function checkEligibility() {
             // Get form values
@@ -345,7 +349,7 @@
         function applyLoan() {
             const { name, income, creditScore, loanvalue, eligibleBanks } = window.userData;
             const bankNames = eligibleBanks.map(bank => bank.name).join(', ');
-            const message = `Loan Application:\nName: ${name}\nIncome: $${income}\nCredit Score: ${creditScore}\nLoan Amount: $${loanvalue}\nEligible Banks: ${bankNames}`;
+            const message = `Loan Application:\nName: ${name}\nIncome: ₹${income}\nCredit Score: ${creditScore}\nLoan Amount: ₹${loanvalue}\nEligible Banks: ${bankNames}`;
 
             // WhatsApp URL (replace with admin's number)
             const adminNumber = "8247634398"; // Replace with actual number in international format (e.g., +919876543210)

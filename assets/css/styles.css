@@ -137,7 +137,7 @@ img {
     right: 0;
     background-color: transparent;
     backdrop-filter: blur(20px);
-    height: 15%;;
+    height: 15%;
     width: 80%;
     margin-inline: auto;
     box-shadow: 0 2px 16px hsla(228, 95%, 4%, .1);
